@@ -29,7 +29,7 @@
       "favicon": "./assets/images/favicon.png"
     },
     "android": {
-      "package": "com.2030UC.BStreet",
+      "package": "com.project.bstreet",
       "versionCode": 1
     }
   }
