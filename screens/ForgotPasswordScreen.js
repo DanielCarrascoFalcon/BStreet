@@ -1,10 +1,8 @@
 import React, { memo, useState } from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { emailValidator } from '../core/utils';
 import Background from '../components/Background';
-import BackButton from '../components/BackButton';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
+import { Title } from 'react-native-paper';
 import TextInput from '../components/TextInput';
 import { theme } from '../core/theme';
 import Button from '../components/Button';
@@ -25,14 +23,12 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
   return (
     <Background>
-      <BackButton goBack={() => navigation.navigate('LoginScreen')} />
+      <Image source={require('../assets/logo.png')} style={styles.image} />
 
-      <Logo />
-
-      <Header>Restore Password</Header>
+      <Title style={{ color: theme.colors.primary }}>Restauración de Contraseña</Title>
 
       <TextInput
-        label="E-mail address"
+        label="Correo Electrónico"
         returnKeyType="done"
         value={email.value}
         onChangeText={text => setEmail({ value: text, error: '' })}
@@ -45,14 +41,14 @@ const ForgotPasswordScreen = ({ navigation }) => {
       />
 
       <Button mode="contained" onPress={_onSendPressed} style={styles.button}>
-        Send Reset Instructions
+        Enviar Correo
       </Button>
 
       <TouchableOpacity
         style={styles.back}
         onPress={() => navigation.navigate('LoginScreen')}
       >
-        <Text style={styles.label}>← Back to login</Text>
+        <Text style={styles.label}>← Volver</Text>
       </TouchableOpacity>
     </Background>
   );
@@ -69,6 +65,11 @@ const styles = StyleSheet.create({
   label: {
     color: theme.colors.secondary,
     width: '100%',
+  },
+  image: {
+    width: 128,
+    height: 128,
+    marginBottom: 12,
   },
 });
 

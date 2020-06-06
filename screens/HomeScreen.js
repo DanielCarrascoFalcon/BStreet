@@ -1,14 +1,16 @@
 import React, { memo } from 'react';
+import { Image, StyleSheet } from 'react-native'
 import Background from '../components/Background';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
 import Button from '../components/Button';
 import Paragraph from '../components/Paragraph';
+import { Title, } from 'react-native-paper'
+import { theme } from '../core/theme';
 
 const HomeScreen = ({ navigation }) => (
   <Background>
-    <Logo />
-    <Header>BStreet</Header>
+    <Image source={require('../assets/logo.png')} style={styles.image} />
+
+    <Title style={{ color: theme.colors.primary }} >BStreet</Title>
 
     <Paragraph>
       La mejor forma de desplazarse por la ciudad
@@ -24,5 +26,14 @@ const HomeScreen = ({ navigation }) => (
     </Button>
   </Background>
 );
+
+
+const styles = StyleSheet.create({
+  image: {
+    width: 128,
+    height: 128,
+    marginBottom: 12,
+  },
+});
 
 export default memo(HomeScreen);

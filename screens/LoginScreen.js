@@ -1,12 +1,12 @@
 import React, { memo, useState } from 'react';
-import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View, Image } from 'react-native';
 import Background from '../components/Background';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
-import Button from '../components/Button';
+import { Title } from 'react-native-paper'
 import TextInput from '../components/TextInput';
 import { theme } from '../core/theme';
 import { emailValidator, passwordValidator } from '../core/utils';
+import Button from '../components/Button';
+
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState({ value: '', error: '' });
@@ -29,9 +29,9 @@ const LoginScreen = ({ navigation }) => {
     <Background>
 
 
-      <Logo />
+      <Image source={require('../assets/logo.png')} style={styles.image} />
 
-      <Header>Bienvenido de vuelta</Header>
+      <Title style={{ color: theme.colors.primary }}>Bienvenido de vuelta</Title>
 
       <TextInput
         label="Email"
@@ -95,6 +95,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: theme.colors.primary,
   },
+  image: {
+    width: 128,
+    height: 128,
+    marginBottom: 12,
+  },
 });
+
+
 
 export default memo(LoginScreen);

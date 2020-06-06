@@ -1,11 +1,10 @@
 import React, { memo, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Background from '../components/Background';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
 import Button from '../components/Button';
 import TextInput from '../components/TextInput';
 import { theme } from '../core/theme';
+import { Title } from 'react-native-paper'
 import {
   emailValidator,
   passwordValidator,
@@ -35,9 +34,9 @@ const RegisterScreen = ({ navigation }) => {
   return (
     <Background>
 
-      <Logo />
+      <Image source={require('../assets/logo.png')} style={styles.image} />
 
-      <Header>Crear Cuenta</Header>
+      <Title style={{ color: theme.colors.primary }}>Crear Cuenta</Title>
 
       <TextInput
         label="Nombre"
@@ -99,6 +98,11 @@ const styles = StyleSheet.create({
   link: {
     fontWeight: 'bold',
     color: theme.colors.primary,
+  },
+  image: {
+    width: 128,
+    height: 128,
+    marginBottom: 12,
   },
 });
 

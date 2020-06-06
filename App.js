@@ -1,18 +1,11 @@
-import * as React from 'react';
-import useCachedResources from './hooks/useCachedResources';
+import React from 'react';
 import MainNavigator from './navigation/MainNavigator';
-import { Text } from 'react-native';
 
 
 export default function App(props) {
-  const isLoadingComplete = useCachedResources();
+  return (
+    <MainNavigator />
+  );
 
-  if (!isLoadingComplete) {
-    return <Text>Cargando</Text>;
-  } else {
-    return (
-      <MainNavigator />
-    );
-  }
 }
 
