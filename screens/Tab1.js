@@ -1,6 +1,6 @@
 import React from 'react'
 import MapView, { Marker } from 'react-native-maps';
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, Button } from 'react-native'
 import Layout from '../constants/Layout'
 
 const Tab1 = () => {

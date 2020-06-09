@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabBarIcon from '../components/TabBarIcon';
 import Tab1 from '../screens/Tab1';
 import Tab2 from '../screens/Tab2';
-
+import Tab3 from '../screens/Tab3';
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
@@ -25,6 +25,14 @@ export default function BottomTabNavigator() {
         component={Tab2}
         options={{
           title: 'Tab2',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Tab3"
+        component={Tab3}
+        options={{
+          title: 'Tab3',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
