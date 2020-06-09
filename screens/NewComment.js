@@ -8,7 +8,7 @@ import TextInput from '../components/TextInput'
 import Button from '../components/Button';
 
 
-const Tab3 = ({ navigation }) => {
+const NewComment = ({ navigation }) => {
 
     return (
         <ScrollView>
@@ -124,4 +124,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Tab3;
+export default NewComment;

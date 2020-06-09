@@ -3,7 +3,7 @@ import MapView, { Marker } from 'react-native-maps';
 import { Text, StyleSheet, View, Button } from 'react-native'
 import Layout from '../constants/Layout'
 
-const Tab1 = () => {
+const Map = () => {
     return (
         <View style={styles.container}>
             <MapView
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Tab1;
+export default Map;

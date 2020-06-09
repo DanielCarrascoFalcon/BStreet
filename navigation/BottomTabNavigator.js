@@ -1,23 +1,23 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabBarIcon from '../components/TabBarIcon';
-import Tab1 from '../screens/Tab1';
+import Map from '../screens/Map';
 import Tab2 from '../screens/Tab2';
-import Tab3 from '../screens/Tab3';
+import NewComment from '../screens/NewComment';
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
-      initialRouteName='Tab1'
+      initialRouteName='Map'
 
     >
       <BottomTab.Screen
-        name="Tab1"
-        component={Tab1}
+        name="Map"
+        component={Map}
         options={{
-          title: 'Tab1',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          title: 'Map',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-map" />,
         }}
       />
       <BottomTab.Screen
@@ -29,11 +29,11 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Tab3"
-        component={Tab3}
+        name="NewComment"
+        component={NewComment}
         options={{
-          title: 'Tab3',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          title: 'NewComment',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-chatboxes" />,
         }}
       />
     </BottomTab.Navigator>
