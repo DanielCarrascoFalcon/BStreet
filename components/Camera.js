@@ -73,7 +73,6 @@ export default function CameraScreen({ setfunc }) {
                                 let photo = await cameraRef.takePictureAsync();
                                 setCapturedPhoto(photo.uri)
                                 setOpen(true)
-                                console.log('photo', photo);
                             }
                         }}>
                         <View style={{
