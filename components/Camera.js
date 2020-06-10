@@ -106,22 +106,35 @@ export default function CameraScreen({ setfunc }) {
                                 setOpen(false)
                             }}
                         >
-                            <TouchableOpacity onPress={() => { setOpen(false) }}>
-                                <Text>Cerrar</Text>
-                            </TouchableOpacity>
                             <Image
-                                style={{ width: width, height: height - 100 }}
+                                style={{ width: width, height: height - 70 }}
                                 source={{ uri: capturedPhoto }}
                             />
-                            <Button
-                                mode='contained'
-                                onPress={() => {
-                                    setOpen(false)
-                                    setfunc(false)
-                                }}
-                            >
-                                Subir
+                            <View style={{
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                height: 50
+                            }}>
+                                <Button
+                                    mode='contained'
+                                    onPress={() => {
+                                        setOpen(false)
+                                        setfunc(false)
+                                    }}
+                                    style={{ width: width / 2, height: 50 }}
+                                >
+                                    Subir
                             </Button>
+                                <Button
+                                    mode='outlined'
+                                    onPress={() => {
+                                        setOpen(false)
+                                    }}
+                                    style={{ width: width / 2, height: 50 }}
+                                >
+                                    Cancelar
+                            </Button>
+                            </View>
                         </Modal>
                     }
                 </View>
