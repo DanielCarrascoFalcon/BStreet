@@ -1,17 +1,37 @@
-import React from 'react';
-import { Text, View, StyleSheet, Animated, ScrollView } from 'react-native';
-import { FormLabel, FormInput, FormValidationMessage, Icon } from 'react-native-elements'
+import React, { useState } from 'react';
+import { Alert, Text, View, StyleSheet, Dimensions, ScrollView, Modal, TouchableHighlight } from 'react-native';
+import { Icon } from 'react-native-elements'
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'
 import { Title } from 'react-native-paper'
 import { theme } from '../core/theme'
 import TextInput from '../components/TextInput'
 import Button from '../components/Button';
+import Camera from '../components/Camera'
 
+const { width, height } = Dimensions.get('window')
 
 const NewComment = ({ navigation }) => {
-
+    const [modalVisible, setModalVisible] = useState(false);
+    const takePhoto = () => {
+        console.log('hola mundo')
+        return (
+            <View>
+                <Text>Hola a todos</Text>
+            </View>
+        )
+    }
     return (
         <ScrollView>
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    setModalVisible(!modalVisible)
+                }}
+            >
+                <Camera setfunc={setModalVisible} />
+            </Modal>
             <View style={styles.titleContainer}>
                 <MaterialCommunityIcons
                     name='comment-multiple-outline'
@@ -24,7 +44,7 @@ const NewComment = ({ navigation }) => {
                         alignSelf: 'center',
                         marginHorizontal: 10,
                         color: 'white',
-                        fontSize: 30
+                        fontSize: 20
                     }}
                 >
                     Agregar Comentario
@@ -85,12 +105,15 @@ const NewComment = ({ navigation }) => {
                     type='material-community'
                     size={50}
                     style={{ marginHorizontal: 30 }}
+                    onPress={() => {
+                        setModalVisible(true);
+                    }}
                 />
             </View>
             <Button
                 style={{ width: '50%', marginLeft: '25%' }}
                 mode='outlined'
-                onPress={() => navigation.navigate('Tab1')}
+                onPress={() => navigation.navigate('Map')}
             >
                 Volver al Mapa
             </Button>
@@ -119,7 +142,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 40
     },
     description: {
-        height: 300
+        height: height / 4
     }
 
 });
