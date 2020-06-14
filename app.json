@@ -30,7 +30,7 @@
     },
     "android": {
       "package": "com.project.bstreet",
-      "versionCode": 1
+      "versionCode": 1.1
     }
   }
 }
