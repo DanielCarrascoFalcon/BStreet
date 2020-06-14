@@ -12,14 +12,6 @@ const { width, height } = Dimensions.get('window')
 
 const NewComment = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
-    const takePhoto = () => {
-        console.log('hola mundo')
-        return (
-            <View>
-                <Text>Hola a todos</Text>
-            </View>
-        )
-    }
     return (
         <ScrollView>
             <Modal
@@ -50,29 +42,59 @@ const NewComment = ({ navigation }) => {
                     Agregar Comentario
             </Title>
             </View>
-            <View style={styles.iconsContainer}>
-                <Icon
-                    name='warning'
-                    type='material'
-                    size={40}
-                    color='#DD2B0F'
-                    style={{ alignSelf: 'center', marginHorizontal: 20, }}
-                />
-                <Icon
-                    name='error'
-                    type='material'
-                    size={40}
-                    color='#F2E10C'
-                    style={{ alignSelf: 'center', marginHorizontal: 20, }}
-                />
-                <Icon
-                    name='check-circle'
-                    type='fontawesome'
-                    size={40}
-                    color='green'
-                    style={{ alignSelf: 'center', marginHorizontal: 20, }}
-                />
-            </View>
+            <ScrollView
+                style={{
+                    width: width / 2,
+                    alignSelf: 'center'
+                }}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+            >
+                <View style={styles.iconsContainer}>
+                    <Icon
+                        name='warning'
+                        type='material'
+                        size={40}
+                        color='#DD2B0F'
+                        style={{ alignSelf: 'center', marginHorizontal: 20, }}
+                    />
+                    <Icon
+                        name='error'
+                        type='material'
+                        size={40}
+                        color='#F2E10C'
+                        style={{ alignSelf: 'center', marginHorizontal: 20, }}
+                    />
+                    <Icon
+                        name='check-circle'
+                        type='fontawesome'
+                        size={40}
+                        color='green'
+                        style={{ alignSelf: 'center', marginHorizontal: 20, }}
+                    />
+                    <Icon
+                        name='warning'
+                        type='material'
+                        size={40}
+                        color='#DD2B0F'
+                        style={{ alignSelf: 'center', marginHorizontal: 20, }}
+                    />
+                    <Icon
+                        name='error'
+                        type='material'
+                        size={40}
+                        color='#F2E10C'
+                        style={{ alignSelf: 'center', marginHorizontal: 20, }}
+                    />
+                    <Icon
+                        name='check-circle'
+                        type='fontawesome'
+                        size={40}
+                        color='green'
+                        style={{ alignSelf: 'center', marginHorizontal: 20, }}
+                    />
+                </View>
+            </ScrollView>
             <View style={styles.form}>
                 <TextInput
                     label="Título"
@@ -97,6 +119,7 @@ const NewComment = ({ navigation }) => {
                 <Button
                     style={{ width: '50%', marginLeft: '25%' }}
                     mode="contained"
+                    onPress={() => navigation.navigate('Map')}
                 >
                     Enviar
                 </Button>
