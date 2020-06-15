@@ -30,7 +30,12 @@
     },
     "android": {
       "package": "com.project.bstreet",
-      "versionCode": 2
+      "versionCode": 2,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyByXPWDL83gGaNAljd0-9EyK58T2_U2O_4"
+        }
+      }
     }
   }
 }
