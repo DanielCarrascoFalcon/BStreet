@@ -1,33 +1,32 @@
-import React from 'react'
+import React from 'react';
 import MapView, { Marker } from 'react-native-maps';
-import { Text, StyleSheet, View, Button } from 'react-native'
-import Layout from '../constants/Layout'
+import {
+    Text, StyleSheet, View, Button,
+} from 'react-native';
+import Layout from '../constants/Layout';
 
-const Map = () => {
-    return (
-        <View style={styles.container}>
-            <MapView
-                style={styles.mapStyle}
-                initialRegion={{
+const Map = () => (
+    <View style={styles.container}>
+        <MapView
+            style={styles.mapStyle}
+            initialRegion={{
+                latitude: -33.499789,
+                longitude: -70.613974,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+            }}
+        >
+            <Marker
+                coordinate={{
                     latitude: -33.499789,
                     longitude: -70.613974,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
                 }}
-            >
-                <Marker
-                    coordinate={{
-                        latitude: -33.499789,
-                        longitude: -70.613974,
-                    }}
-                    title='Hola'
-                    description='Primer marcador'
-                />
-            </MapView>
-        </View>
-    )
-}
-
+                title='Hola'
+                description='Primer marcador'
+            />
+        </MapView>
+    </View>
+);
 
 const styles = StyleSheet.create({
     container: {

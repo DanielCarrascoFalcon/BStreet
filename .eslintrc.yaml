@@ -1,0 +1,14 @@
+extends: airbnb-base
+parser: babel-eslint
+rules:
+  indent:
+    - error
+    - 4
+  no-alert: off 
+  react/jsx-uses-react: error   
+  react/jsx-uses-vars: error
+  no-use-before-define: [error, { variables: false }]
+env:
+  browser: true
+plugins:
+  - react

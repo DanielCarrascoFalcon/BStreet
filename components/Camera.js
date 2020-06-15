@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Modal, Image } from 'react-native'
+import {
+    View, Text, Dimensions, StyleSheet, TouchableOpacity, Modal, Image,
+} from 'react-native';
 import { Camera } from 'expo-camera';
 import { useSafeArea } from 'react-native-safe-area-context';
-import { Icon } from 'react-native-elements'
-import Button from '../components/Button'
+import { Icon } from 'react-native-elements';
+import Button from './Button';
 
-
-
-const { width, height } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window');
 
 export default function CameraScreen({ setfunc }) {
     const [hasPermission, setHasPermission] = useState(null);
-    const [type, setType] = useState(Camera.Constants.Type.back)
-    const [cameraRef, setCameraRef] = useState(null)
-    const [capturedPhoto, setCapturedPhoto] = useState(false)
-    const [open, setOpen] = useState(false)
+    const [type, setType] = useState(Camera.Constants.Type.back);
+    const [cameraRef, setCameraRef] = useState(null);
+    const [capturedPhoto, setCapturedPhoto] = useState(false);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -32,16 +32,16 @@ export default function CameraScreen({ setfunc }) {
 
     return (
         <View style={{ flex: 1 }}>
-            <Camera style={{ flex: 1 }} type={type} ref={ref => { setCameraRef(ref) }}>
+            <Camera style={{ flex: 1 }} type={type} ref={(ref) => { setCameraRef(ref); }}>
                 <View
                     style={{
                         height: 100,
-                        width: width,
+                        width,
                         backgroundColor: 'transparent',
                         flexDirection: 'row',
-                        position: "absolute",
+                        position: 'absolute',
                         bottom: 10,
-                        alignSelf: 'center'
+                        alignSelf: 'center',
                     }}>
                     <TouchableOpacity
                         style={{
@@ -52,7 +52,7 @@ export default function CameraScreen({ setfunc }) {
                             setType(
                                 type === Camera.Constants.Type.back
                                     ? Camera.Constants.Type.front
-                                    : Camera.Constants.Type.back
+                                    : Camera.Constants.Type.back,
                             );
                         }}>
                         <Icon
@@ -65,14 +65,14 @@ export default function CameraScreen({ setfunc }) {
                     <TouchableOpacity
                         style={{
                             alignSelf: 'center',
-                            marginBottom: 0
+                            marginBottom: 0,
                         }}
 
                         onPress={async () => {
                             if (cameraRef) {
-                                let photo = await cameraRef.takePictureAsync();
-                                setCapturedPhoto(photo.uri)
-                                setOpen(true)
+                                const photo = await cameraRef.takePictureAsync();
+                                setCapturedPhoto(photo.uri);
+                                setOpen(true);
                             }
                         }}>
                         <View style={{
@@ -83,7 +83,7 @@ export default function CameraScreen({ setfunc }) {
                             width: 50,
                             display: 'flex',
                             justifyContent: 'center',
-                            alignItems: 'center'
+                            alignItems: 'center',
                         }}
                         >
                             <View style={{
@@ -92,48 +92,48 @@ export default function CameraScreen({ setfunc }) {
                                 borderColor: 'white',
                                 height: 40,
                                 width: 40,
-                                backgroundColor: 'white'
+                                backgroundColor: 'white',
                             }} >
                             </View>
                         </View>
                     </TouchableOpacity>
-                    {capturedPhoto &&
-                        <Modal
+                    {capturedPhoto
+                        && <Modal
                             animationType='slide'
                             transparent={false}
                             visible={open}
                             onRequestClose={() => {
-                                setOpen(false)
+                                setOpen(false);
                             }}
                         >
                             <Image
-                                style={{ width: width, height: height - 70 }}
+                                style={{ width, height: height - 70 }}
                                 source={{ uri: capturedPhoto }}
                             />
                             <View style={{
                                 flexDirection: 'row',
                                 alignItems: 'center',
-                                height: 50
+                                height: 50,
                             }}>
                                 <Button
                                     mode='contained'
                                     onPress={() => {
-                                        setOpen(false)
-                                        setfunc(false)
+                                        setOpen(false);
+                                        setfunc(false);
                                     }}
                                     style={{ width: width / 2, height: 50 }}
                                 >
                                     Subir
-                            </Button>
+                                </Button>
                                 <Button
                                     mode='outlined'
                                     onPress={() => {
-                                        setOpen(false)
+                                        setOpen(false);
                                     }}
                                     style={{ width: width / 2, height: 50 }}
                                 >
                                     Cancelar
-                            </Button>
+                                </Button>
                             </View>
                         </Modal>
                     }
@@ -148,13 +148,13 @@ export default function CameraScreen({ setfunc }) {
         </View> */}
         </View>
 
-    )
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
-        width: width,
-        height: height,
-        backgroundColor: 'red'
-    }
-})
+        width,
+        height,
+        backgroundColor: 'red',
+    },
+});

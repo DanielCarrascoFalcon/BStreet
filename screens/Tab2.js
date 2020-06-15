@@ -8,12 +8,12 @@ const Tab2 = () => {
 
     useEffect(() => {
         (async () => {
-            let { status } = await Location.requestPermissionsAsync();
+            const { status } = await Location.requestPermissionsAsync();
             if (status !== 'granted') {
                 setErrorMsg('Permission to access location was denied');
             }
 
-            let location = await Location.getCurrentPositionAsync({});
+            const location = await Location.getCurrentPositionAsync({});
             setLocation(location);
         })();
     });
@@ -21,9 +21,9 @@ const Tab2 = () => {
     if (errorMsg) {
         return (
             <Text>Hubo un error: {errorMsg}</Text>
-        )
+        );
     }
-    else if (location) {
+    if (location) {
         text = JSON.stringify(location);
         return (
             <View>
@@ -35,15 +35,13 @@ const Tab2 = () => {
                     Longitud: {location.coords.longitude}
                 </Text>
             </View>
-        )
-    }
-    else {
-        return (
-            <Text>Cargando...</Text>
-        )
+        );
     }
 
-}
+    return (
+        <Text>Cargando...</Text>
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
