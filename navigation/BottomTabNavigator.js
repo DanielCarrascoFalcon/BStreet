@@ -22,12 +22,22 @@ export default function BottomTabNavigator() {
                     tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-map" />,
                 }}
             />
-            <BottomTab.Screen
+            {/*  <BottomTab.Screen
                 name="Tab2"
                 component={Tab2}
                 options={{
                     title: 'Tab2',
                     tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+                }}
+            /> */}
+            <BottomTab.Screen
+                name="Rutas"
+                component={Prueba}
+
+                options={{
+                    title: 'Rutas',
+                    tabBarVisible: true,
+                    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-bookmark" />,
                 }}
             />
             <BottomTab.Screen
@@ -35,16 +45,6 @@ export default function BottomTabNavigator() {
                 component={NewComment}
                 options={{
                     title: 'NewComment',
-                    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-chatboxes" />,
-                }}
-            />
-            <BottomTab.Screen
-                name="Prueba"
-                component={Prueba}
-
-                options={{
-                    title: 'Prueba',
-                    tabBarVisible: true,
                     tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-chatboxes" />,
                 }}
             />

@@ -147,8 +147,6 @@ const NewComment = ({ navigation }) => {
                         />
                     </TouchableOpacity>
 
-
-
                 </View>
             </ScrollView>
             <View style={styles.form}>
