@@ -4,6 +4,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import Map from '../screens/Map';
 import Tab2 from '../screens/Tab2';
 import NewComment from '../screens/NewComment';
+import Prueba from '../screens/Prueba';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -37,6 +38,17 @@ export default function BottomTabNavigator() {
                     tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-chatboxes" />,
                 }}
             />
+            <BottomTab.Screen
+                name="Prueba"
+                component={Prueba}
+
+                options={{
+                    title: 'Prueba',
+                    tabBarVisible: true,
+                    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-chatboxes" />,
+                }}
+            />
+
         </BottomTab.Navigator>
     );
 }
