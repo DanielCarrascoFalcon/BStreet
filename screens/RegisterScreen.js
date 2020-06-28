@@ -36,7 +36,7 @@ const RegisterScreen = ({ navigation }) => {
     return (
         <Background>
 
-            <Image source={require('../assets/logo.png')} style={styles.image} />
+            <Image source={require('../assets/logo2.png')} style={styles.image} />
 
             <Title style={{ color: theme.colors.primary }}>Crear Cuenta</Title>
 
@@ -73,7 +73,7 @@ const RegisterScreen = ({ navigation }) => {
             />
 
             <Button mode="contained" onPress={_onSignUpPressed} style={styles.button}>
-        Registrarse
+                Registrarse
             </Button>
 
             <View style={styles.row}>

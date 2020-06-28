@@ -7,32 +7,32 @@ import Paragraph from '../components/Paragraph';
 import { theme } from '../core/theme';
 
 const HomeScreen = ({ navigation }) => (
-    <Background>
-        <Image source={require('../assets/logo.png')} style={styles.image} />
+  <Background>
+    <Image source={require('../assets/logo2.png')} style={styles.image} />
 
-        <Title style={{ color: theme.colors.primary }} >BStreet</Title>
+    <Title style={{ color: theme.colors.primary }} >BStreet</Title>
 
-        <Paragraph>
+    <Paragraph>
       La mejor forma de desplazarse por la ciudad
         </Paragraph>
-        <Button mode="contained" onPress={() => navigation.navigate('LoginScreen')}>
+    <Button mode="contained" onPress={() => navigation.navigate('LoginScreen')}>
       Ingresar
         </Button>
-        <Button
-            mode="outlined"
-            onPress={() => navigation.navigate('RegisterScreen')}
-        >
+    <Button
+      mode="outlined"
+      onPress={() => navigation.navigate('RegisterScreen')}
+    >
       Registrarse
         </Button>
-    </Background>
+  </Background>
 );
 
 const styles = StyleSheet.create({
-    image: {
-        width: 128,
-        height: 128,
-        marginBottom: 12,
-    },
+  image: {
+    width: 128,
+    height: 128,
+    marginBottom: 12,
+  },
 });
 
 export default memo(HomeScreen);

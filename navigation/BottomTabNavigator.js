@@ -18,7 +18,7 @@ export default function BottomTabNavigator() {
                 name="Map"
                 component={Map}
                 options={{
-                    title: 'Map',
+                    title: 'Mapa',
                     tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-map" />,
                 }}
             />
@@ -44,7 +44,7 @@ export default function BottomTabNavigator() {
                 name="NewComment"
                 component={NewComment}
                 options={{
-                    title: 'NewComment',
+                    title: 'Comentario',
                     tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-chatboxes" />,
                 }}
             />

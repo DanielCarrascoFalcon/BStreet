@@ -25,7 +25,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
     return (
         <Background>
-            <Image source={require('../assets/logo.png')} style={styles.image} />
+            <Image source={require('../assets/logo2.png')} style={styles.image} />
 
             <Title style={{ color: theme.colors.primary }}>Restauración de Contraseña</Title>
 
@@ -43,7 +43,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
             />
 
             <Button mode="contained" onPress={_onSendPressed} style={styles.button}>
-        Enviar Correo
+                Enviar Correo
             </Button>
 
             <TouchableOpacity

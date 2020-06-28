@@ -29,7 +29,7 @@ const LoginScreen = ({ navigation }) => {
     return (
         <Background>
 
-            <Image source={require('../assets/logo.png')} style={styles.image} />
+            <Image source={require('../assets/logo2.png')} style={styles.image} />
 
             <Title style={{ color: theme.colors.primary }}>Bienvenido de vuelta</Title>
 
@@ -65,7 +65,7 @@ const LoginScreen = ({ navigation }) => {
             </View>
 
             <Button mode="contained" onPress={_onLoginPressed}>
-        Ingresar
+                Ingresar
             </Button>
 
             <View style={styles.row}>
