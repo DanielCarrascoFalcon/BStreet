@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-    Alert, Text, View, StyleSheet, Dimensions, ScrollView, Modal, TouchableHighlight,
+    Image, Text, View, StyleSheet, Dimensions, ScrollView, Modal, TouchableHighlight, TouchableOpacity,
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
@@ -53,48 +53,102 @@ const NewComment = ({ navigation }) => {
                 showsHorizontalScrollIndicator={false}
             >
                 <View style={styles.iconsContainer}>
-                    <Icon
-                        name='warning'
-                        type='material'
-                        size={40}
-                        color='#DD2B0F'
-                        style={{ alignSelf: 'center', marginHorizontal: 20 }}
-                    />
-                    <Icon
-                        name='error'
-                        type='material'
-                        size={40}
-                        color='#F2E10C'
-                        style={{ alignSelf: 'center', marginHorizontal: 20 }}
-                    />
-                    <Icon
-                        name='check-circle'
-                        type='fontawesome'
-                        size={40}
-                        color='green'
-                        style={{ alignSelf: 'center', marginHorizontal: 20 }}
-                    />
-                    <Icon
-                        name='warning'
-                        type='material'
-                        size={40}
-                        color='#DD2B0F'
-                        style={{ alignSelf: 'center', marginHorizontal: 20 }}
-                    />
-                    <Icon
-                        name='error'
-                        type='material'
-                        size={40}
-                        color='#F2E10C'
-                        style={{ alignSelf: 'center', marginHorizontal: 20 }}
-                    />
-                    <Icon
-                        name='check-circle'
-                        type='fontawesome'
-                        size={40}
-                        color='green'
-                        style={{ alignSelf: 'center', marginHorizontal: 20 }}
-                    />
+                    <TouchableOpacity>
+                        <Icon
+                            name='warning'
+                            type='material'
+                            size={40}
+                            color='#DD2B0F'
+                            style={{ alignSelf: 'center', marginHorizontal: 20 }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Icon
+                            name='error'
+                            type='material'
+                            size={40}
+                            color='#F2E10C'
+                            style={{ alignSelf: 'center', marginHorizontal: 20 }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Icon
+                            name='check-circle'
+                            type='fontawesome'
+                            size={40}
+                            color='green'
+                            style={{ alignSelf: 'center', marginHorizontal: 20 }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/icons/paraderor.png')}
+                            style={{
+                                width: 40,
+                                height: 40,
+                                alignSelf: 'center',
+                                marginHorizontal: 20,
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/icons/paraderog.png')}
+                            style={{
+                                width: 40,
+                                height: 40,
+                                alignSelf: 'center',
+                                marginHorizontal: 20,
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/icons/paraderov.png')}
+                            style={{
+                                width: 40,
+                                height: 40,
+                                alignSelf: 'center',
+                                marginHorizontal: 20,
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/icons/toiletr.png')}
+                            style={{
+                                width: 40,
+                                height: 40,
+                                alignSelf: 'center',
+                                marginHorizontal: 20,
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/icons/toiletg.png')}
+                            style={{
+                                width: 40,
+                                height: 40,
+                                alignSelf: 'center',
+                                marginHorizontal: 20,
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/icons/toiletv.png')}
+                            style={{
+                                width: 40,
+                                height: 40,
+                                alignSelf: 'center',
+                                marginHorizontal: 20,
+                            }}
+                        />
+                    </TouchableOpacity>
+
+
+
                 </View>
             </ScrollView>
             <View style={styles.form}>
